@@ -479,8 +479,12 @@
     parentView = view;
     
     // get the top view
-    // http://stackoverflow.com/questions/3843411/getting-reference-to-the-top-most-view-window-in-ios-application/8045804#8045804
-    topView = [[[[UIApplication sharedApplication] keyWindow] subviews] lastObject];
+    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+    if (!window) {
+        window = [[UIApplication sharedApplication].windows objectAtIndex:0];
+    }
+    
+    topView = [[window subviews] objectAtIndex:0];
     
     [self setupLayout:point inView:view];
     
