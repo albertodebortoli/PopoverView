@@ -1,7 +1,5 @@
-*.mode1v3
-.DS_Store
-*.pbxuser
-Build/
 build/
-xcuserdata/
-
+.DS_Store
+*.xcuserstate
+*.xcscheme
+*.xcuserdatad
